@@ -161,20 +161,12 @@ final class KhmerMoneyFormatter
             return $words;
         }
 
-        if ($number < 1000) {
-            $hundreds = intdiv($number, 100);
-            $remainder = $number % 100;
-            $words = self::UNITS[$hundreds] . 'រយ';
-            if ($remainder > 0) {
-                $words .= self::integerToKhmerWords($remainder);
-            }
-            return $words;
-        }
-
         $scales = [
             1000000000 => 'ពាន់លាន',
             1000000 => 'លាន',
+            10000 => 'ម៉ឺន',
             1000 => 'ពាន់',
+            100 => 'រយ',
         ];
 
         foreach ($scales as $value => $label) {

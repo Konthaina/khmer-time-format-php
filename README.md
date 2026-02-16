@@ -39,8 +39,8 @@ use KhmerTimeFormat\KhmerMoneyFormatter;
 
 echo KhmerMoneyFormatter::formatKHR(15000);              // ១៥,០០០ ៛
 echo KhmerMoneyFormatter::formatUSD(15000);              // $15,000.00
-echo KhmerMoneyFormatter::toKhmerWordsKHR(15000);        // ដប់ប្រាំពាន់ រៀល
-echo KhmerMoneyFormatter::toKhmerWordsUSD(15000);        // ដប់ប្រាំពាន់ ដុល្លារ
+echo KhmerMoneyFormatter::toKhmerWordsKHR(15000);        // មួយម៉ឺនប្រាំពាន់ រៀល
+echo KhmerMoneyFormatter::toKhmerWordsUSD(15000);        // មួយម៉ឺនប្រាំពាន់ ដុល្លារ
 echo KhmerMoneyFormatter::format('KHR', 15000, false);   // 15,000 ៛
 ```
 
