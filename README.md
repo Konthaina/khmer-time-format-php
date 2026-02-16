@@ -14,11 +14,19 @@ composer require your-vendor/khmer-time-format
 ## Usage
 
 ```php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
 use KhmerTimeFormat\KhmerTimeFormatter;
 
 echo KhmerTimeFormatter::format("1:22 PM", "digits");
 echo KhmerTimeFormatter::format("13:22", "words");
+echo KhmerTimeFormatter::formatNow("digits");
+echo KhmerTimeFormatter::formatNow("words", "Asia/Phnom_Penh");
 ```
+
+`formatNow()` uses the current real system time.  
+Pass a timezone like `Asia/Phnom_Penh` when you need a specific timezone.
 
 ## Test
 

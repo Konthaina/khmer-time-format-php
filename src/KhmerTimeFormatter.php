@@ -51,6 +51,26 @@ final class KhmerTimeFormatter
         throw new \InvalidArgumentException("mode must be 'digits' or 'words'");
     }
 
+    public static function formatNow(string $mode = 'digits', ?string $timezone = null): string
+    {
+        $dateTimeZone = null;
+        if ($timezone !== null) {
+            try {
+                $dateTimeZone = new \DateTimeZone($timezone);
+            } catch (\Exception $e) {
+                throw new \InvalidArgumentException("Invalid timezone identifier.");
+            }
+        }
+
+        $now = new \DateTimeImmutable('now', $dateTimeZone);
+        return self::formatDateTime($now, $mode);
+    }
+
+    public static function formatDateTime(\DateTimeInterface $dateTime, string $mode = 'digits'): string
+    {
+        return self::format($dateTime->format('H:i'), $mode);
+    }
+
     private static function parseTime(string $time): array
     {
         $time = trim($time);
