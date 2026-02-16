@@ -8,7 +8,7 @@ Format `1:22 PM` / `13:22` into Khmer.
 ## Install
 
 ```bash
-composer require your-vendor/khmer-time-format
+composer require konthaina/khmer-time-format
 ```
 
 ## Usage
